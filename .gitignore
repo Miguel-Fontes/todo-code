@@ -1,0 +1,13 @@
+dist/
+logs/*
+!.gitkeep
+bower_components/
+tmp
+.DS_Store
+.idea
+*.css.map
+*.sass-cache
+node_modules/
+typings/*
+*.db
+*.log
