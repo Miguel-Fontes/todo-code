@@ -21,11 +21,13 @@ var file = (spec) => {
     return file
   }
 
-  // TODO: Aceitar um array de parsers e executa-los sequencialmente. Chain.
   that.parse = () => {
-    // um parser tem de sempre retornar that
-    // esse é o parser padrao. Se nenhum for informado,
-    // simplesmente retornamos that
+    if (spec && spec.hasOwnProperty('parse')) {
+      spec.parse.forEach(function (parser) {
+        parser(file)
+      })
+    }
+
     return that
   }
 
@@ -36,12 +38,6 @@ var file = (spec) => {
     for (let todo of file.content) {
       console.log('------> ' + todo)
     }
-  }
-
-  if (spec && spec.hasOwnProperty('parse')) {
-    spec.parse.forEach(function (parser) {
-      parser(that)
-    })
   }
 
   return that

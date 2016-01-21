@@ -1,5 +1,5 @@
 'use strict'
-var parseTodo = (that) => {
+var parseTodo = (file) => {
   const token = '.*\\/(?:\\/|\\*)\\s?\\*?todo.*'
   const endToken = ''
   // TODO: Implementar possibilidade de ler strings de um start-token até um end-token
@@ -8,11 +8,10 @@ var parseTodo = (that) => {
     return value.replace(/^\s*/gi, '')
   }
 
-  that.parse = () => {
-    let value = that.getData()
-    value.content = that.getData().content.match(regex) || []
-    value.content = value.content.map(trim)
-    return that
-  }
+  let value = file
+  value.content = value.content.match(regex) || []
+  value.content = value.content.map(trim)
+
+  return file
 }
 module.exports = parseTodo
