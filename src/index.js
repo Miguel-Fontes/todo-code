@@ -1,6 +1,6 @@
 'use strict'
 var directory = require('./directory')
-var file = require('./file')({parse: [require('./todo-parse')]})
+var file = require('./file')({parse: [require('./todo-parse'), require('./slash-parse')]})
 
 try {
   const esteDiretorio = Object.freeze({path: '.\\', recursive: false, extensions: ['.js']})

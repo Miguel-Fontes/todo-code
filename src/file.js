@@ -35,8 +35,8 @@ var file = (spec) => {
     let file = that.getData()
 
     console.log('--- Arquivo: ' + file.name)
-    for (let todo of file.content) {
-      console.log('------> ' + todo)
+    for (let content of file.content) {
+      console.log(content)
     }
   }
 

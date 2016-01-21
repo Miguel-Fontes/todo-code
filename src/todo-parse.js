@@ -8,9 +8,12 @@ var parseTodo = (file) => {
     return value.replace(/^\s*/gi, '')
   }
 
-  let value = file
-  value.content = value.content.match(regex) || []
-  value.content = value.content.map(trim)
+  const removeSlash = (value) => {
+    return value.replace(/^\/\//gi, '')
+  }
+
+  file.content = file.content.match(regex) || []
+  file.content = file.content.map(trim).map(removeSlash)
 
   return file
 }
