@@ -9,8 +9,8 @@ var parseTodo = (that) => {
   }
 
   that.parse = () => {
-    let value = that.readData()
-    value.content = that.readData().content.match(regex) || []
+    let value = that.getData()
+    value.content = that.getData().content.match(regex) || []
     value.content = value.content.map(trim)
     return that
   }

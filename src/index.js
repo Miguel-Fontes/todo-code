@@ -1,7 +1,6 @@
 'use strict'
 var directory = require('./directory')
-var file = require('./file')
-var parseTodo = require('./todo-parse')
+var file = require('./file')({parse: [require('./todo-parse')]})
 
 try {
   const esteDiretorio = Object.freeze({path: '.\\', recursive: false, extensions: ['.js']})
@@ -10,10 +9,9 @@ try {
     .getContent()
 
   arquivos.forEach((arquivo) => {
-    
-    arquivo.parse = parseTodo
-      
-    file(arquivo)
+
+    file
+      .open(arquivo)
       .parse()
       .listar()
   })

@@ -5,37 +5,44 @@ var file = (spec) => {
 
   let file = {}
 
-  const path = spec.path || null
-  const name = spec.name || null
-  const parse = spec.parse || null
-
-  openFile()
-
-  function openFile () {
+  that.open = (f) => {
+    if (!f) throw new Error('Arquivo para leitura não informado!')
     try {
-      file.name = name
-      file.content = fs.readFileSync(path + name).toString()
+      file.name = f.name
+      file.content = fs.readFileSync(f.path + f.name).toString()
 
       return that
     } catch (e) {
-      throw new Error('Erro ao abrir arquivo ' + path + name + '! - ' + e)
+      throw new Error('Erro na leitura de arquivo ' + f.path + f.name + '! - ' + e)
     }
   }
 
-  that.readData = () => {
+  that.getData = () => {
     return file
   }
 
+  // TODO: Aceitar um array de parsers e executa-los sequencialmente. Chain.
+  that.parse = () => {
+    // um parser tem de sempre retornar that
+    // esse é o parser padrao. Se nenhum for informado,
+    // simplesmente retornamos that
+    return that
+  }
+
   that.listar = () => {
-    let file = that.readData()
+    let file = that.getData()
 
     console.log('--- Arquivo: ' + file.name)
     for (let todo of file.content) {
-      console.log('-> ' + todo)
+      console.log('------> ' + todo)
     }
   }
 
-  if (parse) parse(that)
+  if (spec && spec.hasOwnProperty('parse')) {
+    spec.parse.forEach(function (parser) {
+      parser(that)
+    })
+  }
 
   return that
 }
