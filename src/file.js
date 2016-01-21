@@ -6,10 +6,12 @@ var file = (spec) => {
   let file = {}
 
   that.open = (f) => {
-    if (!f) throw new Error('Arquivo para leitura não informado!')
+    if (!f && f.hasOwnProperty(f.name) && f.hasOwnProperty(f.path)) throw new Error('Arquivo para leitura não informado!')
     try {
+      file = {} // Totalmente necessário para quebrar a referência.
       file.name = f.name
       file.content = fs.readFileSync(f.path + f.name).toString()
+      file.path = f.path
 
       return that
     } catch (e) {
@@ -27,7 +29,6 @@ var file = (spec) => {
         parser(file)
       })
     }
-
     return that
   }
 
@@ -38,6 +39,7 @@ var file = (spec) => {
     for (let content of file.content) {
       console.log(content)
     }
+    return that
   }
 
   return that

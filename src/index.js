@@ -1,20 +1,21 @@
 'use strict'
-var directory = require('./directory')
+var directory = require('./directory')({path: '.\\', recursive: false, extensions: ['.js']})
 var file = require('./file')({parse: [require('./todo-parse'), require('./slash-parse')]})
 
 try {
-  const esteDiretorio = Object.freeze({path: '.\\', recursive: false, extensions: ['.js']})
+  let todos = []
 
-  let arquivos = directory(esteDiretorio)
-    .getContent()
+  let arquivos = directory.getContent()
 
-  arquivos.forEach((arquivo) => {
+  for (let arquivo of arquivos) {
 
-    file
+    todos.push(file
       .open(arquivo)
       .parse()
-      .listar()
-  })
+      .getData())
+  }
+
+  console.log(todos)
 
 } catch (e) {
   console.log(e)
