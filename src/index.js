@@ -13,6 +13,12 @@ try {
       .getData()
   })
 
+  archive.filter((f) => {
+    if (f.content.length > 0) {
+      return true
+    }
+  })
+
   archive.log()
 
 } catch (e) {
