@@ -13,8 +13,12 @@ let container = function (spec, my) {
     console.log(content)
   }
 
-  that.map = (f) => {
-    content = content.map(f)
+  that.map = (f, t) => {
+    content = content.map(f, t)
+  }
+
+  that.filter = (f, t) => {
+    content = content.filter(f, t)
   }
 
   return that
