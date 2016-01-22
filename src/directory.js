@@ -5,7 +5,8 @@ var directory = (spec) => {
   const path = spec.path || null
   const extensions = spec.extensions || []
   const recursive = spec.recursive || null
-  // TODO: Implementar recursão de subdiretórios
+  const ignore = spec.ignore || null
+
   // TODO: Validar parâmetros de diretório indicados
 
   var that = {}
@@ -23,9 +24,19 @@ var directory = (spec) => {
         return {path: path, name: value}
       })
 
+      // Filtro os ignores
+      files = files.filter(function (value) {
+        for (let name of ignore) {
+          if (value.name === name) {
+            return false
+          } 
+        }
+        return true
+      })
+
       files.forEach((value) => {
         if (fs.statSync(value.path + value.name).isDirectory() && recursive) {
-          let newDirectory = directory({path: value.path + value.name + '\\', recursive: recursive, extensions: extensions}).getContent()
+          let newDirectory = directory({path: value.path + value.name + '/', recursive: recursive, extensions: extensions, ignore: ignore}).getContent()
           files = files.concat(newDirectory)
         }
       })
