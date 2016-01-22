@@ -10,8 +10,8 @@ var file = (spec) => {
     try {
       file = {} // Totalmente necessário para quebrar a referência.
       file.name = f.name
-      file.content = fs.readFileSync(f.path + f.name).toString()
       file.path = f.path
+      file.content = fs.readFileSync(f.path + f.name).toString()
 
       return that
     } catch (e) {
