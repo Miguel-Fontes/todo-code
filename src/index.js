@@ -1,5 +1,5 @@
 'use strict'
-var directory = require('./directory')({path: '.\\', recursive: true, extensions: ['.js']})
+var directory = require('./directory')({path: './/', recursive: true, extensions: ['.js']})  // Para um teste mais legal -> .//..//..//loja-concept//
 var file = require('./file')({parse: [require('./todo-parse'), require('./slash-parse')]})
 var container = require('./container')
 

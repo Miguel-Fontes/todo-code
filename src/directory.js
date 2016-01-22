@@ -25,10 +25,8 @@ var directory = (spec) => {
 
       files.forEach((value) => {
         if (fs.statSync(value.path + value.name).isDirectory() && recursive) {
-          let newDirectory = directory({path: value.path + value.name + '\\', recursive: recursive, extensions: extensions}).getContent()          
+          let newDirectory = directory({path: value.path + value.name + '\\', recursive: recursive, extensions: extensions}).getContent()
           files = files.concat(newDirectory)
-
-
         }
       })
 
