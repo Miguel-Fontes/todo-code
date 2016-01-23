@@ -1,0 +1,52 @@
+html {
+  box-sizing: border-box; 
+  }
+
+*, *:before, *:after {
+  box-sizing: inherit; 
+  }
+
+header {
+    background-color: white;
+    margin: 0 0 0 0;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
+}
+
+header h1 {
+    margin: 0 0 0 0;
+    line-height: 2em;
+    padding-left: 1em;
+}
+
+
+p {
+    font-weight: bold;
+}
+
+body {
+    background-color: ghostwhite;
+    font-family: "Roboto Condensed";
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+
+.todo-list {
+    background-color: white;
+    width: 30%;
+    margin: 0.5em 0.5em 0.5em;
+    padding: 0.5em 1em 1em 1em;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
+    border-top: 0.2em solid steelblue;
+}
+
+ul {
+    list-style: none;
+}
+
+.todo-panel {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1em;
+  justify-content: center;
+}
