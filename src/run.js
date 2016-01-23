@@ -3,6 +3,11 @@ var directory = require('./directory')({path: './/', recursive: true, extensions
 var file = require('./file')({parse: [require('./todo-parse')]})
 var container = require('./container')
 
+// TODO: Extrair a library de tratamento de arquivos para módulo separado e publicar no NPM. Usar aqui como dependência.
+// TODO: Pesquisar formas de templating para implementar cards
+// TODO: Possibilitar configuração da aplicação (seleção de diretório para ser monitorado)
+// TODO: Empacotar aplicação
+
 try {
   let archive = container({value: directory.getContent()})
 
