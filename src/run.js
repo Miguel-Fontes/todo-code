@@ -26,11 +26,11 @@ try {
 
   const todos = archive.get()
 
-  document.write('<div class="todo-panel">')
+  document.write('<div class="c-todo-panel">')
   todos.forEach(function (value) {
-    document.write('<section class="todo-card">')
+    document.write('<section class="c-todo-card t-box-shadow">')
     document.write('<p>' + value.name + ' - [' + value.path + ']' + '<p>')
-    document.write('<ul>')
+    document.write('<ul class="c-todo-list">')
     value.content.forEach(function (content) {
       document.write('<li><i class="fa fa-angle-double-right"></i>' + content + '</li>')
     })
