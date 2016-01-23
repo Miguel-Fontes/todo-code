@@ -32,10 +32,11 @@ body {
     margin: 0 0 0 0;
 }
 
-.todo-list {
+.todo-card {
     background-color: white;
     min-width: 20em;
-    width: 25%;
+    width: 24%;
+    min-height: 12em;
     margin: 0.5em 0.5em 0.5em;
     padding: 0.8em;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);

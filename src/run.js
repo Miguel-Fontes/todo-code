@@ -1,5 +1,5 @@
 'use strict'
-var directory = require('./directory')({path: './/', recursive: true, extensions: ['.js'], ignore: ['node_modules', '.git', 'vscode', 'dist']}) // Para um teste mais legal -> .//..//..//loja-concept//
+var directory = require('./directory')({path: './/', recursive: true, extensions: ['.js'], ignore: ['node_modules', '.git', 'vscode', 'dist']})
 var file = require('./file')({parse: [require('./todo-parse')]})
 var container = require('./container')
 
@@ -20,11 +20,10 @@ try {
   })
 
   const todos = archive.get()
-  console.log(todos)
 
   document.write('<div class="todo-panel">')
   todos.forEach(function (value) {
-    document.write('<section class="todo-list">')
+    document.write('<section class="todo-card">')
     document.write('<p>' + value.name + ' - [' + value.path + ']' + '<p>')
     document.write('<ul>')
     value.content.forEach(function (content) {
