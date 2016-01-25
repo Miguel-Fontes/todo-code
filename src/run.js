@@ -1,5 +1,5 @@
 'use strict'
-var directory = require('./directory')({path: './/', recursive: true, extensions: ['.js'], ignore: ['node_modules', '.git', 'vscode', 'dist']})
+var directory = require('./directory')({path: './/..//Highland//', recursive: true, extensions: ['.js'], ignore: ['node_modules', '.git', 'vscode', 'dist']})
 var file = require('./file')({parse: [require('./todo-parse')]})
 var container = require('./container')
 
@@ -7,6 +7,7 @@ var container = require('./container')
 // TODO: Pesquisar formas de templating para implementar cards
 // TODO: Possibilitar configuração da aplicação (seleção de diretório para ser monitorado)
 // TODO: Empacotar aplicação
+// TODO: Tratamento de parâmetros e diretórios
 
 try {
   let archive = container({value: directory.getContent()})
