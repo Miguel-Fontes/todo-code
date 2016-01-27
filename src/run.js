@@ -26,7 +26,7 @@ try {
   })
 
   const todos = archive.get()
-
+  document.write('<div class="c-todo-container">')
   document.write('<div class="c-todo-panel">')
   todos.forEach(function (value) {
     document.write('<section class="c-todo-card t-box-shadow">')
@@ -38,6 +38,7 @@ try {
     document.write('</ul>')
     document.write('</section>')
   })
+  document.write('</div>')
   document.write('</div>')
 
 } catch (e) {

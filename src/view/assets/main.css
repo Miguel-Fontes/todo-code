@@ -13,6 +13,10 @@ header {
     margin: 0 0 0 0;
 }
 
+h2 {
+    margin: 0 0 0 0;
+}
+
 header h1 {
     margin: 0 0 0 0;
     line-height: 2em;
@@ -30,6 +34,12 @@ body {
     font-family: "Roboto Condensed";
     padding: 0 0 0 0;
     margin: 0 0 0 0;
+}
+
+.c-todo-container {
+    display: inline-block;
+    width: 89%;
+    margin-left: 11%
 }
 
 .c-todo-panel {
@@ -55,9 +65,26 @@ body {
 
 .o-list-unstyled {
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .c-todo-list {
     padding: 0;
     margin-left: 1.5em;
+}
+
+.c-project-container {
+    width: 10%;
+    min-width: 10em;
+    height: 92%;
+    margin: 0.5em;
+    padding: 0.8em;
+    position: absolute;
+    background-color: white;
+    display: inline-block
+}
+
+.c-project-list {
+    padding: 1em
 }
