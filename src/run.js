@@ -1,7 +1,7 @@
 'use strict'
-var directory = require('./directory')({path: './/..//Highland//', recursive: true, extensions: ['.js'], ignore: ['node_modules', '.git', 'vscode', 'dist']})
-var file = require('./file')({parse: [require('./todo-parse')]})
-var container = require('./container')
+var directory = require('./../directory')({path: './/..//Highland//', recursive: true, extensions: ['.js'], ignore: ['node_modules', '.git', 'vscode', 'dist']})
+var file = require('./../file')({parse: [require('./../todo-parse')]})
+var container = require('./../container')
 
 // TODO: Extrair a library de tratamento de arquivos para módulo separado e publicar no NPM. Usar aqui como dependência.
 // TODO: Pesquisar formas de templating para implementar cards
@@ -31,7 +31,7 @@ try {
   todos.forEach(function (value) {
     document.write('<section class="c-todo-card t-box-shadow">')
     document.write('<p>' + value.name + ' - [' + value.path + ']' + '<p>')
-    document.write('<ul class="c-todo-list">')
+    document.write('<ul class="c-todo-list o-list-unstyled">')
     value.content.forEach(function (content) {
       document.write('<li><i class="fa fa-angle-double-right"></i>' + content + '</li>')
     })
