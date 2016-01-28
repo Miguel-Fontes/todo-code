@@ -17,16 +17,17 @@
     </header>
     <nav class="c-project-container t-box-shadow">
         <ul class="c-project-list o-list-unstyled">
-            <li> teste </li>
-            <li> teste </li>
-            <li> teste </li>
-            <li> teste </li>
-            <li> teste </li>
-            <li> teste </li>
-            <li> teste </li>
-            <li> teste </li>
+            <li x-data-path="c:/desenv/highland/" class="c-project-list__item" onclick="run(event)"> Highland </li>
+            <li x-data-path="c:/desenv/loja-concept/" class="c-project-list__item" onclick="run(event)"> Loja Concept </li>
+            <li x-data-path="c:/desenv/JSGoodParts/" class="c-project-list__item" onclick="run(event)"> Projects Todos </li>
         </ul>
+        <button class="c-button-add-project o-fix-to-bottom"><i class="fa fa-plus"></i> Add
+        </button>
     </nav>
+    <div class="c-todo-container">
+        <div class="c-todo-panel">
+        </div>
+    </div>
     <script src="./../run.js"></script>
 </body>
 
