@@ -18,15 +18,10 @@
     <nav class="c-project-container t-box-shadow">
         <ul class="c-project-list o-list-unstyled">
         </ul>
-        <button class="c-button-add-project o-fix-to-bottom o-default-button" onclick="add(event)"><i class="fa fa-plus"></i> Add
+        <button class="c-button-add-project o-fix-to-bottom o-default-button" onclick="add.toggleDialog(event)"><i class="fa fa-plus"></i> Add
         </button>
     </nav>
-    <div class="c-todo-container">
-        <div class="c-todo-panel">
-        </div>
-    </div>
-
-    <div class="c-add-box t-box-shadow">
+    <div class="c-add-box t-box-shadow is-hidden">
         <h2 class="c-add-box__title">Informações do Projeto</h2>
         <label for="nome" class="c-add-box_label">Nome </label>
         <input id="nome" class="c-add-box_input" type="text">
@@ -40,8 +35,12 @@
         <div class="c-add-box__controls">
             <div class="c-add-box__buttons">
                 <button class="o-default-button c-add-box__button" onclick="add.ok(event)"> OK </button>
-                <button class="o-default-button c-add-box__button"> CANCEL </button>
+                <button class="o-default-button c-add-box__button" onclick="add.cancel(event)"> CANCEL </button>
             </div>
+        </div>
+    </div>
+    <div class="c-todo-container">
+        <div class="c-todo-panel">
         </div>
     </div>
     <script src="./../run.js "></script>
