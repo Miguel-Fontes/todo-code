@@ -49,13 +49,18 @@ let add = (function (e) {
     newProject = buildProjectElement(projectName, dirPath + '/', run)
 
     projectsList.appendChild(newProject)
-    
+
     toggleDialog(e)
+    resetState()
+  }
+
+  function resetState () {
+    nameInput.value = ''
+    dirInput.value = ''
   }
 
   function cancel (e) {
-    nameInput.value = ''
-    dirInput.value = ''
+    resetState()
 
     newProject = buildProjectElement(projectName, dirPath + '/', run)
 
