@@ -15,13 +15,36 @@
     <header class="t-box-shadow">
         <h1>Project's Todo's</h1>
     </header>
-    <nav class="c-project-container">
-        <ul class= "c-project-list">
-            <li>
-            </li>
+    <nav class="c-project-container t-box-shadow">
+        <ul class="c-project-list o-list-unstyled">
         </ul>
+        <button class="c-button-add-project o-fix-to-bottom o-default-button" onclick="add.toggleDialog(event)"><i class="fa fa-plus"></i> Add
+        </button>
     </nav>
-    <script src="./../run.js"></script>
+    <div class="c-add-box t-box-shadow is-hidden">
+        <h2 class="c-add-box__title">Informações do Projeto</h2>
+        <label for="nome" class="c-add-box_label">Nome </label>
+        <input id="nome" class="c-add-box_input" type="text">
+        <br />
+        <br />
+        <label for="directory" class="c-add-box_label">Diretório </label>
+        <br />
+        <input id="directory" class="c-add-box_input--80" type="text" accept="dir" disabled>
+        <button class="o-default-button c-add-box__browse-button" onclick="add.openFile()">Browse</button>
+
+        <div class="c-add-box__controls">
+            <div class="c-add-box__buttons">
+                <button class="o-default-button c-add-box__button" onclick="add.ok(event)"> OK </button>
+                <button class="o-default-button c-add-box__button" onclick="add.cancel(event)"> CANCEL </button>
+            </div>
+        </div>
+    </div>
+    <div class="c-todo-container">
+        <div class="c-todo-panel">
+        </div>
+    </div>
+    <script src="./../run.js "></script>
+    <script src="./../add.js "></script>
 </body>
 
 </html>
