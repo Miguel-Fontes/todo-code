@@ -22,6 +22,8 @@ let add = (function (e) {
 
   that.openFile = openFile
   that.ok = ok
+  that.toggleDialog = toggleDialog
+  that.cancel = cancel
 
   initialize()
 
@@ -47,6 +49,17 @@ let add = (function (e) {
     newProject = buildProjectElement(projectName, dirPath + '/', run)
 
     projectsList.appendChild(newProject)
+    
+    toggleDialog(e)
+  }
+
+  function cancel (e) {
+    nameInput.value = ''
+    dirInput.value = ''
+
+    newProject = buildProjectElement(projectName, dirPath + '/', run)
+
+    toggleDialog(e)
   }
 
   function buildProjectElement (name, path, action) {
@@ -60,6 +73,30 @@ let add = (function (e) {
     newProject.addEventListener('click', action)
 
     return newProject
+  }
+
+  function toggleDialog (e) {
+    toggleClass(addBox, 'is-hidden')
+  }
+
+  function addClass (element, cssClass) {
+    if (!element.classList.contains(cssClass)) {
+      element.classList.add(cssClass)
+    }
+  }
+
+  function removeClass (element, cssClass) {
+    if (element.classList.contains(cssClass)) {
+      element.classList.remove(cssClass)
+    }
+  }
+
+  function toggleClass (element, cssClass) {
+    if (element.classList.contains(cssClass)) {
+      removeClass(element, cssClass)
+    } else {
+      addClass(element, cssClass)
+    }
   }
 
   return that
