@@ -16,7 +16,7 @@ let run = (function (e) {
     path: path,
     recursive: true,
     extensions: ['.js'],
-    ignore: ['node_modules', '.git', 'vscode', 'dist']
+    ignore: ['node_modules', '.git', 'vscode', 'dist', 'bower_components', 'db']
   })
 
   try {
