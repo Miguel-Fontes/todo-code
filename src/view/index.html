@@ -17,18 +17,35 @@
     </header>
     <nav class="c-project-container t-box-shadow">
         <ul class="c-project-list o-list-unstyled">
-            <li x-data-path="c:/desenv/highland/" class="c-project-list__item" onclick="run(event)"> Highland </li>
-            <li x-data-path="c:/desenv/loja-concept/" class="c-project-list__item" onclick="run(event)"> Loja Concept </li>
-            <li x-data-path="c:/desenv/JSGoodParts/" class="c-project-list__item" onclick="run(event)"> Projects Todos </li>
         </ul>
-        <button class="c-button-add-project o-fix-to-bottom"><i class="fa fa-plus"></i> Add
+        <button class="c-button-add-project o-fix-to-bottom o-default-button" onclick="add(event)"><i class="fa fa-plus"></i> Add
         </button>
     </nav>
     <div class="c-todo-container">
         <div class="c-todo-panel">
         </div>
     </div>
-    <script src="./../run.js"></script>
+
+    <div class="c-add-box t-box-shadow">
+        <h2 class="c-add-box__title">Informações do Projeto</h2>
+        <label for="nome" class="c-add-box_label">Nome </label>
+        <input id="nome" class="c-add-box_input" type="text">
+        <br />
+        <br />
+        <label for="directory" class="c-add-box_label">Diretório </label>
+        <br />
+        <input id="directory" class="c-add-box_input--80" type="text" accept="dir" disabled>
+        <button class="o-default-button c-add-box__browse-button" onclick="add.openFile()">Browse</button>
+
+        <div class="c-add-box__controls">
+            <div class="c-add-box__buttons">
+                <button class="o-default-button c-add-box__button" onclick="add.ok(event)"> OK </button>
+                <button class="o-default-button c-add-box__button"> CANCEL </button>
+            </div>
+        </div>
+    </div>
+    <script src="./../run.js "></script>
+    <script src="./../add.js "></script>
 </body>
 
 </html>

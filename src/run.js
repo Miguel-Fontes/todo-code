@@ -1,12 +1,8 @@
 'use strict'
 let run = (function (e) {
-  /*let directory = require('./../directory')({path: './/..//Highland//', recursive: true, extensions: ['.js'], ignore: ['node_modules', '.git', 'vscode', 'dist']}),
-  file = require('./../file')({parse: [require('./../todo-parse')]}),
-  container = require('./../container'),
-*/
-  let directory = require('./../directory'),
-    file = require('./../file')({parse: [require('./../todo-parse')]}),
-    container = require('./../container'),
+  let directory = require('./directory'),
+    file = require('./file')({parse: [require('./todo-parse')]}),
+    container = require('./container'),
     path = e.target.attributes['x-data-path'].value,
     projectFiles
 
@@ -75,3 +71,6 @@ let run = (function (e) {
     console.log(e)
   }
 })
+
+
+module.exports = run

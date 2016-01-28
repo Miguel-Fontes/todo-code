@@ -23,7 +23,7 @@ p {
     font-weight: bold;
     margin: 0;
     padding: 0;
-    line-height: 2.0em
+    line-height: 2.0em;
 }
 
 body {
@@ -36,7 +36,7 @@ body {
 .c-todo-container {
     display: inline-block;
     width: 89%;
-    margin-left: 13em
+    margin-left: 13em;
 }
 
 .c-todo-panel {
@@ -78,12 +78,12 @@ body {
     padding: 0.8em;
     position: absolute;
     background-color: white;
-    display: inline-block
+    display: inline-block;
 }
 
 .c-project-list {
     padding: 0.5em;
-    height: 96.5%
+    height: 96.5%;
 }
 
 .c-project-list__item {
@@ -100,11 +100,94 @@ body {
 }
 
 .c-button-add-project {
- width: 100%;
- line-height: 2em;   
- border-radius: 0;
+    width: 100%;
+}
+
+.o-default-button {
+    line-height: 2em;
+    border-radius: 0;
+    border: 0;
+    color: white;
+    background-color: deepskyblue;
+    font-weight: 900;
+}
+
+.o-default-button:hover {
+    background-color: midnightblue;
 }
 
 .c-button-add-project:hover {
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
+}
+
+.c-add-box {
+    width: 30em;
+    background-color: white;
+    position: relative;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+.c-add-box__title {
+    margin: 0 0 0.7em 0;
+    line-height: 2em;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+.c-add-box_label {
+    display: inline-block;
+    width: 3.5em;
+    margin-right: 1em;
+    line-height: 2em;
+    font-weight: bold;
+}
+
+.c-add-box_input {
+    display: inline-block;
+    width: 100%;
+    outline: 0;
+    padding: 0.2em;
+    font: 1em "Roboto Condensed";
+    border: 1px solid grey;
+}
+
+.c-add-box_input--80 {
+    display: inline-block;
+    width: 80%;
+    outline: 0;
+    padding: 0.2em;
+    font: 1em "Roboto Condensed";
+    border: 1px solid grey;
+}
+
+.c-add-box_input:focus {
+    outline: 0;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
+    transition-delay: 0s;
+    border: 1px solid deepskyblue;
+}
+
+.c-add-box__controls {
+    margin-top: 1.8em;
+    border-top: 1px solid black;
+    padding: 1em 0 0 0;
+}
+
+.c-add-box__buttons {
+    margin: 0 auto;
+    width: 17em;
+}
+
+.c-add-box__button {
+    width: 10em;
+    display: inline-block;
+}
+
+.c-add-box__browse-button {
+    width: 6.7em;
 }
