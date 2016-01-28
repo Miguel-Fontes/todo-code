@@ -9,9 +9,19 @@ let add = (function (e) {
     nameInput,
     dirInput,
     projectsList,
-    newProject
+    newProject,
+    run = require('./../run'),
+    db
 
-  let run = require('./../run')
+  require('./../db/staticdb')
+    .build({dir: './/dbdata//', suffix: '-db.data'})
+    .initialize(function (err, dbinstance) {
+      db = dbinstance
+
+      db('projects').query((data) => {
+        initialize(data || [])
+      })
+    })
 
   dialog = remote.require('dialog')
 
@@ -25,13 +35,11 @@ let add = (function (e) {
   that.toggleDialog = toggleDialog
   that.cancel = cancel
 
-  initialize()
-
-  function initialize () {
+  function initialize (data) {
     // Initialização de alguns projetos para ficar bonito
-    projectsList.appendChild(buildProjectElement('Highland', 'C:\\desenv\\highland', run))
-    projectsList.appendChild(buildProjectElement('Loja Concept', 'C:\\desenv\\loja-concept', run))
-    projectsList.appendChild(buildProjectElement('Project Todos', 'C:\\desenv\\JSGoodParts', run))
+    data.forEach((project) => {
+      projectsList.appendChild(buildProjectElement(project.name, project.dir, run))
+    })
   }
 
   function openFile () {
@@ -49,6 +57,10 @@ let add = (function (e) {
     newProject = buildProjectElement(projectName, dirPath + '/', run)
 
     projectsList.appendChild(newProject)
+
+    db('projects').save({name: projectName, dir: dirPath}, function(err, data) {
+        return
+    })
 
     toggleDialog(e)
     resetState()
