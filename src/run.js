@@ -6,7 +6,6 @@ let run = (function (e) {
     path = e.target.attributes['x-data-path'].value,
     projectFiles
 
-  // TODO: Extrair a library de tratamento de arquivos para módulo separado e publicar no NPM. Usar aqui como dependência.
     // TODO: Pesquisar formas de templating para implementar cards
     // TODO: Possibilitar configuração da aplicação (seleção de diretório para ser monitorado)
     // TODO: Empacotar aplicação
