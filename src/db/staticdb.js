@@ -49,8 +49,8 @@ module.exports = (function staticDbFactory () {
             })
 
           } catch (e) {
-            throw new Error('Erro na leitura de arquivos estáticos de BD! - ' + e)
             callback(err, [])
+            throw new Error('Erro na leitura de arquivos estáticos de BD! - ' + e)
           }
 
           dbFiles = items
